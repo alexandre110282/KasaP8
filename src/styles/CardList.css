@@ -1,0 +1,7 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Ajoute un peu d'espace entre les cartes */
+  justify-content: center; /* Centre les cartes horizontalement */
+  align-items: flex-start; /* Aligner les cartes en haut */
+}
