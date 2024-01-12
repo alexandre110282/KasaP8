@@ -1,7 +1,19 @@
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Ajoute un peu d'espace entre les cartes */
+  gap: 50px; /* Ajoute un peu d'espace entre les cartes */
   justify-content: center; /* Centre les cartes horizontalement */
   align-items: flex-start; /* Aligner les cartes en haut */
+  width: 1240px;
+height: 829px;
+border-radius: 25px;
+background: #F6F6F6;
+padding-top: 56px;
+padding-bottom: 56px;
+margin-top: 43px;
+margin-bottom: 50px;
+overflow-y: auto;
 }
+
+.card-list::-webkit-scrollbar {
+ width: 1px;}

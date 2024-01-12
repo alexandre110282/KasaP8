@@ -1,19 +1,28 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './Header.js';
-import FicheLogement from './FicheLogement'; // Importez le composant FicheLogement
-import APropos from './APropos'; // Importez le composant APropos
+import CardList from './CardList';
+import FicheLogement from './FicheLogement';
+import APropos from './APropos';
+import Banner from './Banner.js'; // Ajout de Banner
+import Footer from './Footer.js'; // Ajout de Footer
 
 function App() {
+  const location =  useLocation()
   return (
     <div className="App">
-      <Header />
+      <Header /> 
+      <Banner /> {/* Ajout de Banner */}
+      <CardList />
       <Routes>
         <Route path="/fiche-logement" element={<FicheLogement />} />
         <Route path="/a-propos" element={<APropos />} />
       </Routes>
+     
       {/* Footer, en-tête, ou tout autre élément commun */}
+      <Footer /> {/* Ajout de Footer */}
     </div>
   );
 }
+
 export default App;

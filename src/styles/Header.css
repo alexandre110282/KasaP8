@@ -1,0 +1,35 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1240px;
+}
+
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  color: #ff6060;
+  gap: 30px;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 142.6%; /* 34.224px */
+}
+
+.nav ul li {
+  transition: text-decoration 0.2s; /* Ajout de la transition pour un effet fluide */
+}
+
+.nav ul li:hover {
+  text-decoration-line: underline; /* Change l'effet de soulignement au passage de la souris */
+}
+
+.nav ul li a,
+.nav ul li a:visited,
+.nav ul li a:active {
+  color: #ff6060; /* Même couleur pour les liens non visités, visités et actifs */
+  text-decoration: none; /* Supprimer la soulignement par défaut */
+}
