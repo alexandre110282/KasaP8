@@ -1,0 +1,22 @@
+.logementImg{
+    width: 1240px;
+    height: 415px;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.image-container{
+    position: relative;
+    width: 1240px;
+}
+.arrow-left{
+    position: absolute;
+    left: 1%;
+    top: 39%;
+}
+
+.arrow-right{
+    position: absolute;
+    right: 1%;
+    top: 39%;
+}

@@ -1,16 +1,21 @@
 import React from 'react';
-import banner from '../assets/IMG.png';
+import PropTypes from 'prop-types';
 import '../styles/Banner.css';
 
-function Banner() {
+function Banner(props) {
   return (
     <div className="banner-container">
-      <img src={banner} alt="banner" className="bannerImg" />
+      <img src={props.image} alt="banner" className="bannerImg" />
       <div className='bannerTextContainer'>
-        <p className='bannerText'>Chez vous, partout et ailleurs</p>
+        {props.showText && <p className='bannerText'>Chez vous, partout et ailleurs</p>}
       </div>
     </div>
   );
 }
+
+Banner.propTypes = {
+  image: PropTypes.string.isRequired,
+  showText: PropTypes.bool, // Ajoutez la prop showText comme un booléen facultatif
+};
 
 export default Banner;

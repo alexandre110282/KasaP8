@@ -1,0 +1,13 @@
+.star-filled{
+    color: #FF6060
+}
+
+.star-empty{
+    color: #E3E3E3
+}
+
+.rating{
+    width: 196px;
+    height: 36px;
+    font-size: 25px;
+}

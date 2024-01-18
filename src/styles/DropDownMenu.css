@@ -1,5 +1,6 @@
 .dropdown {
   position: relative;
+  width: 1240px;
 }
 
 .dropdown-toggle {
@@ -13,9 +14,8 @@
 .dropdown-menu {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out; /* Augmentez la durée de la transition */
+  transition: max-height 0.2s ease-in-out; /* Augmentez la durée de la transition */
   background-color: #fff;
-  border: 1px solid #ddd;
 }
 
 .dropdown.opened .dropdown-menu {
