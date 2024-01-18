@@ -1,6 +1,6 @@
 .arrow-icon {
-  width: 16px; /* Ajustez la taille selon vos besoins */
-  height: 16px; /* Ajustez la taille selon vos besoins */
+  width: 32px; /* Ajustez la taille selon vos besoins */
+  height: 32px; /* Ajustez la taille selon vos besoins */
   transition: transform 0.3s ease; /* Animation de rotation */
 }
 

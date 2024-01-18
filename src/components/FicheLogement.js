@@ -1,45 +1,13 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import DropdownMenu from './DropDownMenu';
-import ArrowCar from '../assets/Vector.png';
-import '../styles/FicheLogement.css'
-import '../styles/Star.css'
+import Carousel from './Carousel';
+import Rating from './Rating';
+import '../styles/FicheLogement.css';
 
 function FicheLogements({ logements }) {
   const { logementId } = useParams();
   const [currentId, setCurrentId] = useState(logementId);
-
-  const handlePrevious = () => {
-    const currentIndex = logements.findIndex((logement) => logement.id === currentId);
-    let newIndex;
-
-    if (currentIndex === 0) {
-      // Si nous sommes au début de la liste, revenez à la fin
-      newIndex = logements.length - 1;
-    } else {
-      // Sinon, déplacez-vous vers le précédent
-      newIndex = currentIndex - 1;
-    }
-
-    setCurrentId(logements[newIndex].id);
-  };
-
-  const handleNext = () => {
-    const currentIndex = logements.findIndex((logement) => logement.id === currentId);
-    let newIndex;
-
-    if (currentIndex === logements.length - 1) {
-      // Si nous sommes à la fin de la liste, revenez au début
-      newIndex = 0;
-    } else {
-      // Sinon, passez au suivant
-      newIndex = currentIndex + 1;
-    }
-
-    setCurrentId(logements[newIndex].id);
-  };
 
   const logement = logements.find((logement) => logement.id === currentId);
 
@@ -48,42 +16,29 @@ function FicheLogements({ logements }) {
   }
 
   const currentIndex = logements.findIndex((item) => item.id === currentId);
-  const currentPosition = currentIndex + 1;
   const totalItems = logements.length;
-
-  // Créer un tableau d'étoiles remplies en fonction de la note
-  const stars = [];
-  const rating = logement.rating;
-  const maxRating = 5;
-
-  for (let i = 0; i < maxRating; i++) {
-    if (i < rating) {
-      // Ajouter une étoile remplie
-      stars.push(<FontAwesomeIcon icon={faStar} key={i} className="star-filled" />);
-    } else if (i < Math.ceil(rating)) {
-      // Ajouter une demi-étoile
-      stars.push(<FontAwesomeIcon icon={faStarHalf} key={i} className="star-half-filled" />);
-    } else {
-      // Ajouter une étoile vide
-      stars.push(<FontAwesomeIcon icon={faStar} key={i} className="star-empty" />);
-    }
-  }
 
   return (
     <div className="fiche-logements">
       <div className="logement-details">
         <div className='image-container'>
-          {/* Utilisation de z-index pour placer les flèches en premier plan */}
-          <img src={ArrowCar} alt="Flèche gauche" className="arrow-left" onClick={handlePrevious} />
-          <img src={ArrowCar} alt="Flèche droite" className="arrow-right" onClick={handleNext} style={{ transform: 'rotate(180deg)' }} />
+          {/* Utilisation du composant Carousel pour gérer le carrousel */}
+          {totalItems > 1 && ( // Vérifiez s'il y a plus d'une image avant d'afficher le compteur
+            <Carousel items={logements} currentId={currentId} onPrevious={setCurrentId} onNext={setCurrentId} />
+          )}
+          {/* Affichage du compteur de position uniquement s'il y a plus d'une image */}
+        {totalItems > 1 && (
+          <p>
+            {currentIndex + 1}/{totalItems}
+          </p>
+        )}
           <img className='logementImg' src={logement.cover} alt={logement.title} />
         </div>
         <h1>{logement.title}</h1>
-        
-        <p>
-          {currentPosition}/{totalItems}
-        </p>
-
+        <div className='hostName'>
+        <p>{logement.host.name}</p>
+        <img src={logement.host.picture} alt={logement.host.name} />
+        </div>
         <div className="tags">
           <ul>
             {logement.tags.map((tag, index) => (
@@ -91,14 +46,12 @@ function FicheLogements({ logements }) {
             ))}
           </ul>
         </div>
+  
 
-        {/* Affichage des étoiles */}
-        <div className="rating">
-          {stars.map((star, index) => (
-            <span key={index}>{star}</span>
-          ))}
-        </div>
+        {/* Affichage du rating en utilisant le composant Rating */}
+        <Rating rating={logement.rating} />
 
+        <div className='allDropDown'>
         {/* Menu déroulant pour la description */}
         <DropdownMenu title="Description">
           <p>{logement.description}</p>
@@ -112,6 +65,7 @@ function FicheLogements({ logements }) {
             ))}
           </ul>
         </DropdownMenu>
+</div>
       </div>
     </div>
   );
