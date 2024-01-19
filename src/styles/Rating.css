@@ -10,4 +10,6 @@
     width: 196px;
     height: 36px;
     font-size: 25px;
+    display: flex;
+    justify-content: space-evenly;
 }

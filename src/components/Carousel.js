@@ -1,41 +1,39 @@
-import React from 'react';
-import ArrowCar from '../assets/Vector.png';
+import React, { useState } from 'react';
+import ArrowCar from '../assets/Vector.png'
 
-function Carousel({ items, currentId, onPrevious, onNext }) {
+function Carousel({ images, currentImage }) {
+  const [currentIdx, setCurrentIdx] = useState(images.indexOf(currentImage));
+
   const handlePrevious = () => {
-    const currentIndex = items.findIndex((item) => item.id === currentId);
-    let newIndex;
-
-    if (currentIndex === 0) {
-      // Si nous sommes au début de la liste, revenez à la fin
-      newIndex = items.length - 1;
-    } else {
-      // Sinon, déplacez-vous vers le précédent
-      newIndex = currentIndex - 1;
-    }
-
-    onPrevious(items[newIndex].id);
+    setCurrentIdx((prevIdx) => (prevIdx === 0 ? images.length - 1 : prevIdx - 1));
   };
 
   const handleNext = () => {
-    const currentIndex = items.findIndex((item) => item.id === currentId);
-    let newIndex;
-
-    if (currentIndex === items.length - 1) {
-      // Si nous sommes à la fin de la liste, revenez au début
-      newIndex = 0;
-    } else {
-      // Sinon, passez au suivant
-      newIndex = currentIndex + 1;
-    }
-
-    onNext(items[newIndex].id);
+    setCurrentIdx((prevIdx) => (prevIdx === images.length - 1 ? 0 : prevIdx + 1));
   };
 
   return (
     <div className="carousel">
-      <img src={ArrowCar} alt="Flèche gauche" className="arrow-left" onClick={handlePrevious} />
-      <img src={ArrowCar} alt="Flèche droite" className="arrow-right" onClick={handleNext} style={{ transform: 'rotate(180deg)' }} />
+      <img
+        src={images[currentIdx]}
+        alt={`Image ${currentIdx + 1}`}
+        className="carousel-image"
+      />
+      <div className="carousel-arrows">
+        <img
+          src={ArrowCar}
+          alt="Flèche gauche"
+          className="arrow-left"
+          onClick={handlePrevious}
+        />
+        <img
+          src={ArrowCar}
+          alt="Flèche droite"
+          className="arrow-right"
+          onClick={handleNext}
+          style={{ transform: 'rotate(180deg)' }}
+        />
+      </div>
     </div>
   );
 }

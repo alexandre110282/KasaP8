@@ -25,12 +25,12 @@ function App() {
     <div className="App">
       <Header />
       {/* Conditionnellement rendre le Banner en fonction de showBanner */}
-      {showBanner && <Banner image={bannerImage} showText={showText} />}
+      {showBanner && <Banner  key={location.pathname} image={bannerImage} showText={showText} />}
       <Routes>
         <Route path="/" element={<CardList />} />
         <Route path="/a-propos" element={<APropos />} />
         <Route path="/fiche-logement/:logementId" element={<FicheLogements logements={cardData} />} />
-      </Routes>
+        </Routes>
       <Footer />
     </div>
   );

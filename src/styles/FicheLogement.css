@@ -1,4 +1,4 @@
-.logementImg{
+.carousel-image{
     width: 1240px;
     height: 415px;
     border-radius: 25px;
@@ -9,6 +9,26 @@
     position: relative;
     width: 1240px;
 }
+
+.locationTitle{
+    color: #FF6060;
+    font-size: 36px;
+    font-family: Monserrat;
+}
+
+.image-container p{
+    position: absolute;
+    left: 50%;
+    bottom: 1%;
+    color: white;
+    font-size: 18px;
+}
+
+.arrow-left, .arrow-right{
+    width: 46.68px;
+    height: 79.2px;
+}
+
 .arrow-left{
     position: absolute;
     left: 1%;
@@ -20,18 +40,13 @@
     right: 1%;
     top: 39%;
 }
-.image-container p{
-    position: absolute;
-    left: 50%;
-    bottom: 1%;
-    color: white;
-    font-size: 18px;
-}
+
 
 .tags ul{
     list-style-type: none;
     display: flex;
     gap: 5px;
+    padding: 0;
 }
 
 .tags li{
@@ -45,4 +60,33 @@
     font-size: 14px;
     min-width: 115px;
     padding: 0px 5px 0px 5px;
+}
+
+.hostName p{
+    color: #FF6060;
+    font-size: 18px;
+    font-family: Monserrat;
+}
+
+.hostName img{
+    width: 64px;
+    height: 64px;
+    border-radius: 34px;
+}
+
+.hostName{
+    display: flex;
+    gap: 20px
+}
+
+.titleAndName{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.tagsAndRating{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }

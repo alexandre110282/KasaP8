@@ -15,57 +15,69 @@ function FicheLogements({ logements }) {
     return <div>Logement introuvable</div>;
   }
 
-  const currentIndex = logements.findIndex((item) => item.id === currentId);
-  const totalItems = logements.length;
+  const currentIndex = logement.pictures.indexOf(logement.cover);
+  const totalItems = logement.pictures.length;
+
+  const handleCarouselChange = (newIndex) => {
+    setCurrentId(logement.id);
+    // newIndex est l'index de la nouvelle image dans le tableau des images du logement
+    const newImage = logement.pictures[newIndex];
+    // Mettez à jour l'image du logement avec la nouvelle image
+    logement.cover = newImage;
+  };
 
   return (
     <div className="fiche-logements">
       <div className="logement-details">
         <div className='image-container'>
           {/* Utilisation du composant Carousel pour gérer le carrousel */}
-          {totalItems > 1 && ( // Vérifiez s'il y a plus d'une image avant d'afficher le compteur
-            <Carousel items={logements} currentId={currentId} onPrevious={setCurrentId} onNext={setCurrentId} />
+          {totalItems > 1 && (
+            <Carousel
+              images={logement.pictures}
+              currentImage={logement.cover}
+              onChange={handleCarouselChange}
+            />
           )}
           {/* Affichage du compteur de position uniquement s'il y a plus d'une image */}
-        {totalItems > 1 && (
-          <p>
-            {currentIndex + 1}/{totalItems}
-          </p>
-        )}
-          <img className='logementImg' src={logement.cover} alt={logement.title} />
+          {totalItems > 1 && (
+            <p>
+              {currentIndex + 1}/{totalItems}
+            </p>
+          )}
+          
         </div>
-        <h1>{logement.title}</h1>
-        <div className='hostName'>
-        <p>{logement.host.name}</p>
-        <img src={logement.host.picture} alt={logement.host.name} />
+        <div className='titleAndName'>
+          <h1 className='locationTitle'>{logement.title}</h1>
+          <div className='hostName'>
+            <p>{logement.host.name}</p>
+            <img src={logement.host.picture} alt={logement.host.name} />
+          </div>
         </div>
-        <div className="tags">
-          <ul>
-            {logement.tags.map((tag, index) => (
-              <li key={index}>{tag}</li>
-            ))}
-          </ul>
+        <div className='tagsAndRating'>
+          <div className="tags">
+            <ul>
+              {logement.tags.map((tag, index) => (
+                <li key={index}>{tag}</li>
+              ))}
+            </ul>
+          </div>
+          {/* Affichage du rating en utilisant le composant Rating */}
+          <Rating rating={logement.rating} />
         </div>
-  
-
-        {/* Affichage du rating en utilisant le composant Rating */}
-        <Rating rating={logement.rating} />
-
         <div className='allDropDown'>
-        {/* Menu déroulant pour la description */}
-        <DropdownMenu title="Description">
-          <p>{logement.description}</p>
-        </DropdownMenu>
-
-        {/* Menu déroulant pour les équipements */}
-        <DropdownMenu title="Équipements">
-          <ul>
-            {logement.equipments.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-            ))}
-          </ul>
-        </DropdownMenu>
-</div>
+          {/* Menu déroulant pour la description */}
+          <DropdownMenu title="Description">
+            <p>{logement.description}</p>
+          </DropdownMenu>
+          {/* Menu déroulant pour les équipements */}
+          <DropdownMenu title="Équipements">
+            <ul>
+              {logement.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          </DropdownMenu>
+        </div>
       </div>
     </div>
   );

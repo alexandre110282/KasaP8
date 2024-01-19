@@ -3,7 +3,7 @@ import '../styles/DropDownMenu.css'
 import '../styles/Arrow.css'
 import arrow from '../assets/arrow_back_ios-24px 2.png'
 
-function DropdownMenu({ title, children }) {
+function DropdownMenu({ title, children, width }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {

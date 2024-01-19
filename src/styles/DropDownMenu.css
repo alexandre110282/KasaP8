@@ -1,6 +1,6 @@
 .dropdown {
   position: relative;
-  width: 582px;
+ 
 }
 
 .dropdown-toggle {
@@ -10,7 +10,6 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  width: 582px;
   height: 52px;
   align-items: center;
   font-size: 18px;
@@ -48,4 +47,20 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+  width: 1023px;
+  gap: 8%;
+}
+
+.allDropDown button{
+  width: 582px;
+}
+
+.APropos{
+  width: min-content;
+  margin-top: 30px;
+}
+
+.APropos button{
+  width: 1023px;
+  margin-bottom: 30px;
 }
