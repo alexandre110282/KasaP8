@@ -1,39 +1,26 @@
 import React, { useState } from 'react';
-import ArrowCar from '../assets/Vector.png'
+import ArrowCar from '../assets/Vector.png';
 
-function Carousel({ images, currentImage }) {
-  const [currentIdx, setCurrentIdx] = useState(images.indexOf(currentImage));
+function Carousel({ images, currentImageIndex, onChange }) {
+  const [currentIndex, setCurrentIndex] = useState(currentImageIndex);
 
   const handlePrevious = () => {
-    setCurrentIdx((prevIdx) => (prevIdx === 0 ? images.length - 1 : prevIdx - 1));
+    const newIndex = (currentIndex - 1 + images.length) % images.length;
+    setCurrentIndex(newIndex);
+    onChange(newIndex); // Notifiez le parent de l'index de la nouvelle image
   };
 
   const handleNext = () => {
-    setCurrentIdx((prevIdx) => (prevIdx === images.length - 1 ? 0 : prevIdx + 1));
+    const newIndex = (currentIndex + 1) % images.length;
+    setCurrentIndex(newIndex);
+    onChange(newIndex); // Notifiez le parent de l'index de la nouvelle image
   };
 
   return (
     <div className="carousel">
-      <img
-        src={images[currentIdx]}
-        alt={`Image ${currentIdx + 1}`}
-        className="carousel-image"
-      />
-      <div className="carousel-arrows">
-        <img
-          src={ArrowCar}
-          alt="Flèche gauche"
-          className="arrow-left"
-          onClick={handlePrevious}
-        />
-        <img
-          src={ArrowCar}
-          alt="Flèche droite"
-          className="arrow-right"
-          onClick={handleNext}
-          style={{ transform: 'rotate(180deg)' }}
-        />
-      </div>
+      <img src={ArrowCar} alt="Flèche gauche" className="arrow-left" onClick={handlePrevious} />
+      <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} className='carousel-image'/>
+      <img src={ArrowCar} alt="Flèche droite" className="arrow-right" onClick={handleNext} style={{ transform: 'rotate(180deg)' }} />
     </div>
   );
 }
