@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './Header.js';
 import CardList from './CardList';
 import FicheLogements from './FicheLogement.js';
+import Error404 from './404.js';
 import APropos from './APropos';
 import Banner from './Banner.js';
 import Footer from './Footer.js';
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<CardList />} />
         <Route path="/a-propos" element={<APropos />} />
         <Route path="/fiche-logement/:logementId" element={<FicheLogements logements={cardData} />} />
+        <Route path="*" element={<Error404 />} />
         </Routes>
       <Footer />
     </div>

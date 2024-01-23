@@ -1,6 +1,5 @@
 .dropdown {
   position: relative;
- 
 }
 
 .dropdown-toggle {
@@ -8,26 +7,30 @@
   color: #fff;
   padding: 10px 20px 10px 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   height: 52px;
-  align-items: center;
   font-size: 18px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
 .dropdown-menu {
-  max-height: 0;
+  max-height: 0px;
   overflow: hidden;
-  transition: max-height 0.2s ease-in-out; /* Augmentez la durée de la transition */
-  background-color: #fff;
+  transition: max-height 0.5s ease-in-out;
+  background-color: #F6F6F6;
+  color: #ff6060;
+  padding: 0px 14px 4px 20px;
 }
-
 .dropdown.opened .dropdown-menu {
   max-height: 200px;
+  background-color: #F6F6F6;
+  color: #ff6060;
+  padding: 0px 14px 4px 20px;
+  border-radius: 5px;
 }
-
 .dropdown-menu ul {
   list-style-type: none;
   padding: 0;
@@ -36,14 +39,13 @@
 
 .dropdown-menu ul li {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
 }
 
 .dropdown-menu ul li:last-child {
   border-bottom: none;
 }
 
-.allDropDown{
+.allDropDown {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
@@ -51,16 +53,16 @@
   gap: 8%;
 }
 
-.allDropDown button{
+.allDropDown button {
   width: 582px;
 }
 
-.APropos{
+.APropos {
   width: min-content;
   margin-top: 30px;
 }
 
-.APropos button{
+.APropos button {
   width: 1023px;
-  margin-bottom: 30px;
+  margin-top: 30px;
 }

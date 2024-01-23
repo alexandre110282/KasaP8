@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 import DropdownMenu from './DropDownMenu';
 import Carousel from './Carousel';
 import Rating from './Rating';
@@ -8,14 +8,16 @@ import '../styles/FicheLogement.css';
 function FicheLogements({ logements }) {
   const { logementId } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const navigate =  useNavigate()
 
   const logement = logements.find((logement) => logement.id === logementId);
 
   if (!logement) {
-    return <div>Logement introuvable</div>;
+    // Rediriger l'utilisateur vers la page NotFoundPage
+    navigate('/notfound');
+    return null
   }
 
-  const currentIndex = logements.findIndex((item) => item.id === logementId);
   const totalImages = logement.pictures.length;
 
   const handleCarouselChange = (newImageIndex) => {

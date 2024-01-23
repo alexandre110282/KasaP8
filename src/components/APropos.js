@@ -1,9 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-
 import DropDownMenu from './DropDownMenu.js';
-import FicheLogement from './FicheLogement';
-
 
 function APropos() {
   return (

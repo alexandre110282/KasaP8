@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
 import logoSvg from '../assets/LOGO.svg';
 
@@ -21,8 +21,8 @@ function Header() {
       <img src={logoSvg} alt="Logo" className="header-logo" />
       <nav className='nav'>
         <ul>
-          <li><Link to="/">Accueil</Link></li>
-          <li><Link to="/a-propos">À Propos</Link></li>
+          <li onClick={goToAccueil}>Accueil</li>
+          <li onClick={goToAPropos}>À Propos</li>
         </ul>
       </nav>
     </header>
