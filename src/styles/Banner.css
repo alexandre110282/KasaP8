@@ -1,6 +1,7 @@
 .banner-container {
   position: relative;
-  width: 1240px;
+  width: 100%;
+  max-width: 1240px;
   height: 223px;
   border-radius: 25px;
   overflow: hidden;

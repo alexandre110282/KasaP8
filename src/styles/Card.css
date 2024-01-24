@@ -1,17 +1,12 @@
 .card{
     width: 340px;
     height: 340px;
-    flex-shrink: 0;
-    background: linear-gradient(145deg, #ff7a7a, #ff4747);
   border-radius: 20px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   color: white;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
   position: relative;
+  margin-top: 50px;
 }
 
 .card img {
@@ -25,5 +20,7 @@
   position: absolute;
   z-index: 1;
   bottom: 20px;
+  font-size: 18px;
+  font-family: Monserrat;
   text-align: center;
 }

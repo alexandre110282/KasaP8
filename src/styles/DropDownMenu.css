@@ -23,14 +23,13 @@
   background-color: #F6F6F6;
   color: #ff6060;
   padding: 0px 14px 4px 20px;
-}
-.dropdown.opened .dropdown-menu {
-  max-height: 200px;
-  background-color: #F6F6F6;
-  color: #ff6060;
-  padding: 0px 14px 4px 20px;
   border-radius: 5px;
 }
+
+.dropdown.opened .dropdown-menu {
+  max-height: 200px;
+}
+
 .dropdown-menu ul {
   list-style-type: none;
   padding: 0;
@@ -41,28 +40,24 @@
   padding: 10px;
 }
 
-.dropdown-menu ul li:last-child {
-  border-bottom: none;
+.APropos {
+  width: min-content;
+  margin-top: 30px;
 }
 
 .allDropDown {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
-  width: 1023px;
   gap: 8%;
+  width: 1023px; 
 }
 
 .allDropDown button {
-  width: 582px;
-}
-
-.APropos {
-  width: min-content;
-  margin-top: 30px;
+  width: 582px; 
 }
 
 .APropos button {
-  width: 1023px;
+  width: 1023px; 
   margin-top: 30px;
 }

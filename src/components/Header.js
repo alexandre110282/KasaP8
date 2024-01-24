@@ -18,9 +18,9 @@ function Header() {
 
   return (
     <header className="header">
-      <img src={logoSvg} alt="Logo" className="header-logo" />
-      <nav className='nav'>
-        <ul>
+      <img src={logoSvg} alt="Logo" className="logotype" />
+      <nav >
+        <ul className='nav__list'>
           <li onClick={goToAccueil}>Accueil</li>
           <li onClick={goToAPropos}>À Propos</li>
         </ul>

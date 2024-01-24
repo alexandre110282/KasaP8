@@ -1,22 +1,22 @@
-.carousel-image{
+.carousel-image {
     width: 1240px;
     height: 415px;
     border-radius: 25px;
     object-fit: cover;
 }
 
-.image-container{
+.image-container {
     position: relative;
     width: 1240px;
 }
 
-.locationTitle{
+.locationTitle {
     color: #FF6060;
     font-size: 36px;
     font-family: Monserrat;
 }
 
-.image-container p{
+.image-container p {
     position: absolute;
     left: 50%;
     bottom: 1%;
@@ -24,32 +24,29 @@
     font-size: 18px;
 }
 
-.arrow-left, .arrow-right{
+.arrow-left, .arrow-right {
     width: 46.68px;
     height: 79.2px;
+    position: absolute;
+    top: 39%;
 }
 
-.arrow-left{
-    position: absolute;
+.arrow-left {
     left: 1%;
-    top: 39%;
 }
 
-.arrow-right{
-    position: absolute;
+.arrow-right {
     right: 1%;
-    top: 39%;
 }
 
-
-.tags ul{
+.tags ul {
     list-style-type: none;
     display: flex;
     gap: 5px;
     padding: 0;
 }
 
-.tags li{
+.tags li {
     background-color: #FF6060;
     height: 25px;
     color: white;
@@ -59,33 +56,27 @@
     border-radius: 10px;
     font-size: 14px;
     min-width: 115px;
-    padding: 0px 5px 0px 5px;
+    padding: 0px 5px;
 }
 
-.hostName p{
+.hostName p, .locationTitle {
     color: #FF6060;
     font-size: 18px;
     font-family: Monserrat;
 }
 
-.hostName img{
+.hostName img {
     width: 64px;
     height: 64px;
     border-radius: 34px;
 }
 
-.hostName{
+.hostName {
     display: flex;
-    gap: 20px
+    gap: 20px;
 }
 
-.titleAndName{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.tagsAndRating{
+.titleAndName, .tagsAndRating {
     display: flex;
     justify-content: space-between;
     align-items: baseline;

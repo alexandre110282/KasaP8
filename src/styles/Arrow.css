@@ -1,9 +1,9 @@
 .arrow-icon {
-  width: 32px; /* Ajustez la taille selon vos besoins */
-  height: 32px; /* Ajustez la taille selon vos besoins */
-  transition: transform 0.3s ease; /* Animation de rotation */
+  width: 32px;
+  height: 32px;
+  transition: transform 0.5s ease;
 }
 
 .rotate {
-  transform: rotate(180deg); /* Rotation de 180 degrés lorsque le menu est ouvert */
+  transform: rotate(-180deg);
 }

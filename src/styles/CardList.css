@@ -1,18 +1,27 @@
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px; /* Ajoute un peu d'espace entre les cartes */
-  justify-content: center; /* Centre les cartes horizontalement */
-  align-items: flex-start; /* Aligner les cartes en haut */
-  width: 1240px;
-height: 829px;
-border-radius: 25px;
-background: #F6F6F6;
-padding-top: 56px;
-padding-bottom: 56px;
-margin-top: 43px;
-margin-bottom: 50px;
-overflow-y: auto;
+    background-color: #f6f6f6;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 43px;
+    height: 829px;
+    max-width: 1240px;
+    overflow-y: auto;
+}
+
+@media (max-width: 1420px) {
+    .card-list {
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 890px) {
+    .card-list {
+        background-color: transparent;
+        padding: 0;
+    }
 }
 
 .card-list::-webkit-scrollbar {

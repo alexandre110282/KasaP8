@@ -13,26 +13,23 @@ import cardData from './listeLogement.json';
 import '../styles/App.css'
 
 function App() {
-  const location = useLocation();
+  const location = useLocation()
   const showText = location.pathname !== '/a-propos'; // showText est true sauf sur la page "A propos"
 
   const bannerImage =
     location.pathname === '/a-propos' ? BannerApropos : BannerApp;
 
-  const isFicheLogementPage = location.pathname.startsWith('/fiche-logement');
-  const showBanner = !isFicheLogementPage;
-
   return (
     <div className="App">
       <Header />
-      {/* Conditionnellement rendre le Banner en fonction de showBanner */}
-      {showBanner && <Banner  key={location.pathname} image={bannerImage} showText={showText} />}
+      {(window.location.pathname === '/' || window.location.pathname === '/a-propos') && <Banner key={window.location.pathname} image={bannerImage} showText={showText} />}
+
       <Routes>
         <Route path="/" element={<CardList />} />
         <Route path="/a-propos" element={<APropos />} />
         <Route path="/fiche-logement/:logementId" element={<FicheLogements logements={cardData} />} />
         <Route path="*" element={<Error404 />} />
-        </Routes>
+      </Routes>
       <Footer />
     </div>
   );

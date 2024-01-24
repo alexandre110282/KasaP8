@@ -1,36 +1,57 @@
 .header{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    width: 1240px;
+    width: 100%;
+    max-width: 1240px;
+}
+
+.header {
+    margin: 40px 100px 38px 100px;
+    max-width: 1240px;
+}
+
+@media (min-width: 1440px) {
+    .header {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 1420px) {
+    .header {
+        margin: 20px auto 28px auto;
+    }
+}
+
+@media (max-width: 1280px) {
+    .header {
+        margin: 20px 20px 19px 20px;
+    }
 }
 
 
-.nav ul {
+.nav__list  {
   display: flex;
+  flex-direction: row;
   list-style: none;
   color: #ff6060;
   gap: 30px;
-  text-align: right;
   font-family: Montserrat;
   font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 142.6%; /* 34.224px */
+  line-height: 142.6%;
 }
 
-.nav ul li {
-  transition: text-decoration 0.2s; /* Ajout de la transition pour un effet fluide */
+.nav__list li {
   cursor: default;
 }
 
-.nav ul li:hover {
-  text-decoration-line: underline; /* Change l'effet de soulignement au passage de la souris */
+.nav__list li:hover {
+  text-decoration-line: underline;
 }
 
-.nav ul li a,
-.nav ul li a:visited,
-.nav ul li a:active {
-  color: #ff6060; /* Même couleur pour les liens non visités, visités et actifs */
-  text-decoration: none; /* Supprimer la soulignement par défaut */
+.nav__list li a,
+.nav__list li a:visited,
+.nav__list li a:active {
+  color: #ff6060; 
+  text-decoration: none; 
 }
