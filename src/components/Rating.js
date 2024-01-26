@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
-import '../styles/Rating.css'
+import '../styles/Rating.scss'
 
 function Rating({ rating }) {
   // Créer un tableau d'étoiles remplies en fonction de la note

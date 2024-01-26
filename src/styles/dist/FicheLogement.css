@@ -1,0 +1,108 @@
+.fiche-logements {
+  max-width: 1240px;
+  width: 100%;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.titleAndTags {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: column;
+}
+.titleAndTags .locationTitle {
+  color: #FF6060;
+  font-size: 36px;
+  font-family: Monserrat;
+  margin-bottom: 5px;
+}
+@media (max-width: 980px) {
+  .titleAndTags .locationTitle {
+    font-size: 4vw;
+  }
+}
+.titleAndTags .locationPlace {
+  margin: 0;
+  font-family: Montserrat;
+  font-size: 18px;
+}
+@media (max-width: 980px) {
+  .titleAndTags .locationPlace {
+    font-size: 4vw;
+  }
+}
+.titleAndTags .tags ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0;
+}
+.titleAndTags .tags ul li {
+  background-color: #FF6060;
+  height: 25px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 14px;
+  min-width: 115px;
+  padding: 0px 5px;
+}
+
+.image-container p {
+  position: absolute;
+  left: 50%;
+  bottom: 1%;
+  color: white;
+  font-size: 18px;
+}
+
+.arrow-left, .arrow-right {
+  width: 46.68px;
+  height: 79.2px;
+  position: absolute;
+  top: 39%;
+}
+
+.arrow-left {
+  left: 1%;
+}
+
+.arrow-right {
+  right: 1%;
+}
+
+.infos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nameAndRating {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: column;
+}
+.nameAndRating .hostName p {
+  color: #FF6060;
+  font-size: 18px;
+  font-family: Monserrat;
+}
+.nameAndRating .hostName img {
+  width: 64px;
+  height: 64px;
+  border-radius: 34px;
+}

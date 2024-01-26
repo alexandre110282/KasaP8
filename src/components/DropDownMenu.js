@@ -1,6 +1,6 @@
  import React, { useState } from 'react';
-import '../styles/DropDownMenu.css'
-import '../styles/Arrow.css'
+import '../styles/DropDownMenu.scss'
+import '../styles/Arrow.scss'
 import arrow from '../assets/arrow_back_ios-24px 2.png'
 
 function DropdownMenu({ title, children, width }) {

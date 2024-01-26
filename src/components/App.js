@@ -10,7 +10,7 @@ import Footer from './Footer.js';
 import BannerApp from '../assets/IMG.png';
 import BannerApropos from '../assets/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png';
 import cardData from './listeLogement.json';
-import '../styles/App.css'
+import '../styles/App.scss'
 
 function App() {
   const location = useLocation()

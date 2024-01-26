@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Header.css';
+import '../styles/Header.scss';
 import logoSvg from '../assets/LOGO.svg';
 
 function Header() {

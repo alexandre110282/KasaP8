@@ -3,7 +3,7 @@ import { useParams, useNavigate} from 'react-router-dom';
 import DropdownMenu from './DropDownMenu';
 import Carousel from './Carousel';
 import Rating from './Rating';
-import '../styles/FicheLogement.css';
+import '../styles/FicheLogement.scss';
 
 function FicheLogements({ logements }) {
   const { logementId } = useParams();

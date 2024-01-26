@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/404.css";
+import "../styles/404.scss";
 
 function Error404() {
   return (

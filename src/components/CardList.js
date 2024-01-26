@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from './Card';
-
-import '../styles/CardList.css';
+import '../styles/CardList.scss';
 import cardData from './listeLogement.json';
 
 function CardList() {
