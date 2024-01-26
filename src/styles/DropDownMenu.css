@@ -1,5 +1,15 @@
 .dropdown {
   position: relative;
+  max-width: 582px; 
+  border-radius: 10px;
+  padding: 10px 0px 10px 0px;
+  height: 52px;
+  width: 100%;
+}
+.dropdown.opened{
+  width: 100%;
+  position: relative;
+  margin-bottom: 80px;
 }
 
 .dropdown-toggle {
@@ -10,6 +20,7 @@
   border-radius: 5px;
   cursor: pointer;
   height: 52px;
+  width: 100%;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -19,10 +30,10 @@
 .dropdown-menu {
   max-height: 0px;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0s ease-in-out;
   background-color: #F6F6F6;
   color: #ff6060;
-  padding: 0px 14px 4px 20px;
+  padding: 0px 14px 0px 20px;
   border-radius: 5px;
 }
 
@@ -41,7 +52,7 @@
 }
 
 .APropos {
-  width: min-content;
+  width: 100%t;
   margin-top: 30px;
 }
 
@@ -50,14 +61,27 @@
   justify-content: space-between;
   margin-bottom: 50px;
   gap: 8%;
-  width: 1023px; 
+  width: 100%; 
 }
 
-.allDropDown button {
-  width: 582px; 
+
+ @media (max-width: 980px){
+  .allDropDown{
+    flex-direction: column;
+  }
+ }
+
+@media (max-width: 980px) {
+    .dropdown {
+        max-width: none;
+    }
 }
 
-.APropos button {
-  width: 1023px; 
-  margin-top: 30px;
+
+
+@media (max-width: 980px) {
+    .dropdown-toggle {
+        width: 100%;
+    }
 }
+

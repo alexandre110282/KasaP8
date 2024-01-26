@@ -1,26 +1,66 @@
 .banner-container {
-  position: relative;
-  width: 100%;
-  max-width: 1240px;
-  height: 223px;
-  border-radius: 25px;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 223px;
+}
+
+@media (max-width: 890px) {
+    .banner-container {
+        height: 111px;
+    }
+}
+
+.banner-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border-radius: 25px;
+}
+
+@media (max-width: 890px) {
+    .banner-container::before {
+        border-radius: 10px;
+    }
 }
 
 .bannerImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.7);
+   border-radius: 25px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 0;
 }
 
+
+ @media (max-width: 890px) {
+  .bannerImg{
+            border-radius: 10px;
+        }}
+
+
 .bannerText {
-  position: absolute;
-  top: 20%;
-  left: 20%; 
-  color: white;
-  font-family: Montserrat;
-  font-size: 48px;
-  font-style: normal;
   font-weight: 500;
+        font-size: 48px;
+        color: #FFFFFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        z-index: 2;
 }
+
+@media (max-width: 890px) {
+  .bannerText{
+            font-size: 24px;
+            padding-left: 16px;
+        }}
+

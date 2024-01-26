@@ -1,20 +1,42 @@
+.fiche-logements{
+    max-width: 1240px;
+    width: 100%;
+}
+
 .carousel-image {
-    width: 1240px;
-    height: 415px;
+    width: 100%;
+    height: 100%;
     border-radius: 25px;
     object-fit: cover;
 }
 
 .image-container {
     position: relative;
-    width: 1240px;
+    width: 100%;
 }
 
 .locationTitle {
     color: #FF6060;
     font-size: 36px;
     font-family: Monserrat;
+    margin-bottom: 5px;
 }
+
+.locationPlace{
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
+@media(max-width:980px){
+    .locationTitle{
+        font-size: 4vw;
+    }
+    .locationPlace{
+        font-size: 4vw;
+    }
+}
+
 
 .image-container p {
     position: absolute;
@@ -38,10 +60,14 @@
 .arrow-right {
     right: 1%;
 }
-
+ .infos{
+    display: flex;
+    justify-content: space-between;
+ }
 .tags ul {
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     padding: 0;
 }
@@ -59,7 +85,7 @@
     padding: 0px 5px;
 }
 
-.hostName p, .locationTitle {
+.hostName p {
     color: #FF6060;
     font-size: 18px;
     font-family: Monserrat;
@@ -76,8 +102,18 @@
     gap: 20px;
 }
 
-.titleAndName, .tagsAndRating {
+.titleAndTags, .nameAndRating {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-direction: column;
+}
+
+@media(max-width:980px){
+    .infos{
+        flex-direction: column;
+    }
+    .nameAndRating{
+        flex-direction: row-reverse;
+    }
 }

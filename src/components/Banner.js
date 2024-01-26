@@ -6,8 +6,8 @@ function Banner(props) {
   return (
     <div className="banner-container">
       <img src={props.image} alt="banner" className="bannerImg" />
-      <div className='bannerTextContainer'>
-        {props.showText && <p className='bannerText'>Chez vous, partout et ailleurs</p>}
+      <div className='bannerText'>
+        {props.showText && <p >Chez vous, partout et ailleurs</p>}
       </div>
     </div>
   );

@@ -43,27 +43,37 @@ function FicheLogements({ logements }) {
           )}
           
         </div>
-        <div className='titleAndName'>
-          <h1 className='locationTitle'>{logement.title}</h1>
 
-          <div className='hostName'>
-            <p>{logement.host.name}</p>
-            <img src={logement.host.picture} alt={logement.host.name} />
-          </div>
-        </div>
 
-        <div className='tagsAndRating'>
-          <div className="tags">
-            <ul>
-              {logement.tags.map((tag, index) => (
-                <li key={index}>{tag}</li>
-              ))}
-            </ul>
-          </div>
+<div className='infos'>
 
-          {/* Affichage du rating en utilisant le composant Rating */}
-          <Rating rating={logement.rating} />
-        </div>
+        <div className='titleAndTags'>
+  <h1 className='locationTitle'>{logement.title}</h1>
+  <p className='locationPlace'>{logement.location}</p>
+  <div className="tags">
+    <ul>
+      {logement.tags.map((tag, index) => (
+        <li key={index}>{tag}</li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<div className='nameAndRating'>
+  <div className='hostName'>
+    <p>{logement.host.name}</p>
+    <img src={logement.host.picture} alt={logement.host.name} />
+  </div>
+  {/* Affichage du rating en utilisant le composant Rating */}
+  <Rating rating={logement.rating} />
+</div>
+</div>
+
+
+
+
+
+
         <div className='allDropDown'>
           {/* Menu déroulant pour la description */}
           <DropdownMenu title="Description">
