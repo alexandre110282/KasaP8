@@ -8,10 +8,10 @@
 
 .dropdown {
   position: relative;
-  max-width: 582px; 
+  max-width: 1024px;
+  width: 80%; 
   border-radius: 10px;
   padding: 10px 0px 10px 0px;
-  height: 52px;
   width: 100%;
   
   .dropdown-toggle {
@@ -62,4 +62,8 @@
   .dropdown-toggle {
     width: 100%;
   }
+}
+
+.dropdown.opened .dropdown-menu {
+  max-height: 200px;
 }
