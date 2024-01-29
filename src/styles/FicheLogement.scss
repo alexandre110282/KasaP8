@@ -1,6 +1,6 @@
 .fiche-logements {
   max-width: 1240px;
-  width: 100%;
+  width: 90vw;
 
   .infos {
   display: flex;
@@ -10,7 +10,11 @@
   .nameAndRating {
     display: flex;
     justify-content: space-evenly;
-    align-items: baseline;
+  }
+  .titleAndTags{
+    flex-direction: column;
+  }
+  .nameAndRating{
     flex-direction: column;
   }
 }
@@ -104,8 +108,9 @@
 
 .arrow-left,
 .arrow-right {
-  width: 46.68px;
-  height: 79.2px;
+  width: 6vw;
+  max-width: 46.68px;
+  max-height: 79.2px;
   position: absolute;
   top: 39%;
 }
@@ -118,3 +123,24 @@
   right: 1%;
 }
 
+@media(max-width:425px){
+  .fiche-logements .infos .nameAndRating{
+    flex-direction: row-reverse;
+  }
+  .nameAndRating .hostName img{
+    width: 32px;
+    height: 32px;
+  }
+  .nameAndRating .hostName p{
+    font-size: 12px;
+  }
+  .infos .nameAndRating{
+    align-items: flex-end;
+  }
+  .fiche-logements .infos{
+    flex-direction: column;
+  }
+  .infos .titleAndTags{
+    flex-direction: column;
+  }
+}
