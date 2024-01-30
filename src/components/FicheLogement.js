@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate} from 'react-router-dom';
+import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import DropdownMenu from './DropDownMenu';
 import Carousel from './Carousel';
 import Rating from './Rating';
@@ -8,14 +8,13 @@ import '../styles/FicheLogement.scss';
 function FicheLogements({ logements }) {
   const { logementId } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const navigate =  useNavigate()
+  const navigate = useNavigate();
 
   const logement = logements.find((logement) => logement.id === logementId);
 
   if (!logement) {
-    // Rediriger l'utilisateur vers la page NotFoundPage
-    navigate('/notfound');
-    return null
+    // Rediriger l'utilisateur vers la page 404
+    return <Navigate to="*" />;
   }
 
   const totalImages = logement.pictures.length;
@@ -41,38 +40,30 @@ function FicheLogements({ logements }) {
               {currentImageIndex + 1}/{totalImages}
             </p>
           )}
-          
         </div>
 
+        <div className='infos'>
+          <div className='titleAndTags'>
+            <h1 className='locationTitle'>{logement.title}</h1>
+            <p className='locationPlace'>{logement.location}</p>
+            <div className="tags">
+              <ul>
+                {logement.tags.map((tag, index) => (
+                  <li key={index}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
-<div className='infos'>
-
-        <div className='titleAndTags'>
-  <h1 className='locationTitle'>{logement.title}</h1>
-  <p className='locationPlace'>{logement.location}</p>
-  <div className="tags">
-    <ul>
-      {logement.tags.map((tag, index) => (
-        <li key={index}>{tag}</li>
-      ))}
-    </ul>
-  </div>
-</div>
-
-<div className='nameAndRating'>
-  <div className='hostName'>
-    <p>{logement.host.name}</p>
-    <img src={logement.host.picture} alt={logement.host.name} />
-  </div>
-  {/* Affichage du rating en utilisant le composant Rating */}
-  <Rating rating={logement.rating} />
-</div>
-</div>
-
-
-
-
-
+          <div className='nameAndRating'>
+            <div className='hostName'>
+              <p>{logement.host.name}</p>
+              <img src={logement.host.picture} alt={logement.host.name} />
+            </div>
+            {/* Affichage du rating en utilisant le composant Rating */}
+            <Rating rating={logement.rating} />
+          </div>
+        </div>
 
         <div className='allDropDown'>
           {/* Menu déroulant pour la description */}
