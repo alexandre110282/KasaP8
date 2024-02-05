@@ -1,9 +1,9 @@
- import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/DropDownMenu.scss'
 import '../styles/Arrow.scss'
 import arrow from '../assets/arrow_back_ios-24px 2.png'
 
-function DropdownMenu({ title, children, width }) {
+function DropdownMenu({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import DropDownMenu from './DropDownMenu.js';
 
 function APropos() {

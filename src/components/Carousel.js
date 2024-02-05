@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import ArrowCar from '../assets/Vector.png';
 
 function Carousel({ images, currentImageIndex, onChange }) {

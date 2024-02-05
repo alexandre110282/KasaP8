@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useParams, useNavigate, Navigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useParams, Navigate} from 'react-router-dom';
 import DropdownMenu from './DropDownMenu';
 import Carousel from './Carousel';
 import Rating from './Rating';
@@ -8,7 +8,6 @@ import '../styles/FicheLogement.scss';
 function FicheLogements({ logements }) {
   const { logementId } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const navigate = useNavigate();
 
   const logement = logements.find((logement) => logement.id === logementId);
 
@@ -36,7 +35,7 @@ function FicheLogements({ logements }) {
           />
           {/* Affichage du compteur de position uniquement s'il y a plus d'une image */}
           {totalImages > 1 && (
-            <p>
+            <p className='img-counter'>
               {currentImageIndex + 1}/{totalImages}
             </p>
           )}

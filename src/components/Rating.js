@@ -1,6 +1,5 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Rating.scss'
 
 function Rating({ rating }) {
@@ -8,13 +7,12 @@ function Rating({ rating }) {
   const stars = [];
   const maxRating = 5;
 
+  const numberOfStars = Math.round(rating);
+
   for (let i = 0; i < maxRating; i++) {
-    if (i < rating) {
+    if (i < numberOfStars) {
       // Ajouter une étoile remplie
       stars.push(<FontAwesomeIcon icon={faStar} key={i} className="star-filled" />);
-    } else if (i < Math.ceil(rating)) {
-      // Ajouter une demi-étoile
-      stars.push(<FontAwesomeIcon icon={faStarHalf} key={i} className="star-half-filled" />);
     } else {
       // Ajouter une étoile vide
       stars.push(<FontAwesomeIcon icon={faStar} key={i} className="star-empty" />);

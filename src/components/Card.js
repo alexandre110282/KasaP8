@@ -1,5 +1,4 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Utilisez useNavigate au lieu de useHistory
+import { useNavigate } from 'react-router-dom';
 import '../styles/Card.scss'
 
 function Card({ title, image, logement }) {
