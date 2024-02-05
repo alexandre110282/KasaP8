@@ -27,8 +27,7 @@
   .carousel-image {
     width: 100%;
     max-width: 1240px;
-    height: 100%;
-    max-height: 415px;
+    height: 415px;
     border-radius: 25px;
     object-fit: cover;
   }
@@ -148,5 +147,11 @@
 @media (max-width: 768px) {
   .img-counter {
     display: none;
+  }
+}
+
+@media (max-width :890px){
+  .image-container .carousel-image{
+    height: 225px;
   }
 }

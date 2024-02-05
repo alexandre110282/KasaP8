@@ -11,7 +11,6 @@ function DropdownMenu({ title, children }) {
   };
 
   return (
-    
     <div className={`dropdown ${isOpen ? 'opened' : ''}`}>
       <button className="dropdown-toggle" onClick={toggleMenu}>
         {title}
