@@ -21,10 +21,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {(window.location.pathname === '/KasaP8' || window.location.pathname === '/a-propos') && <Banner key={window.location.pathname} image={bannerImage} showText={showText} />}
+      {(window.location.pathname === '/KasaP8' || window.location.pathname === '/KasaP8/a-propos') && <Banner key={window.location.pathname} image={bannerImage} showText={showText} />}
 
       <Routes>
-        <Route path="/KasaP8" element={<CardList />} />
+        <Route path="/" element={<CardList />} />
         <Route path="/a-propos" element={<APropos />} />
         <Route path="/fiche-logement/:logementId" element={<FicheLogements logements={cardData} />} />
         <Route path="*" element={<Error404 />} />

@@ -12,7 +12,7 @@ function Header() {
 
   // Fonction pour naviguer vers la page principale lorsque "Accueil" est cliqué
   const goToAccueil = () => {
-    navigate('/KasaP8');
+    navigate('/');
   };
 
   return (
